@@ -20,7 +20,7 @@ class Person_info{
 
 	//Printing the details of the user
 	public void print_detail() {
-		System.out.println("First name - "+first_name+"\nLast name - "+last_name+"\nAddress - "+address+"\nCity - "+city+"\nState - "+state+"\nZip - "+zip+"\nPhone number - "+phone_number);
+		System.out.println("First name - "+first_name+"\nLast name - "+last_name+"\nAddress - "+address+"\nCity - "+city+"\nState - "+state+"\nZip - "+zip+"\nPhone number - "+phone_number+"\n");
 	}
 }
 
@@ -107,22 +107,25 @@ public class Address_book {
 		int res=0;
 		
 		Scanner sc = new Scanner(System.in);
-		
+		System.out.println("Welcome to User's Address Book");
 		while(res!=4) {
 			
-			System.out.println("Enter 1 to add new user, 2 to modify, 3 to delete and 4 to exit the program");
+			System.out.println("\nEnter 1 to add new user, 2 to modify, 3 to delete and 4 to exit the program");
 			//res to check the output of the user to perform the following functions (add,modify,delete and exit)
 			res=sc.nextInt();
 			switch (res) {
 			case 1:
-				add.add_user();				
+				add.add_user();
+				add.print_users();
 				break;
 			case 2:
+				add.print_users();
 				System.out.println("\nEnter the first name of the user you want to modify");
 				String name = sc.next();
-				add.modify_user(name);			
+				add.modify_user(name);
 				break;
 			case 3:
+				add.print_users();
 				System.out.println("\nEnter the first name of the user you want to delete");
 				String fn = sc.next();
 				add.delete_user(fn);
